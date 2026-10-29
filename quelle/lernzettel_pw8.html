@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Lernzettel PW 8</title>
+<style>
+  @page { size: A4; margin: 13mm 13mm 15mm 13mm; }
+  :root {
+    --blau: #1f5fa8; --blau-hell: #e8f0fa;
+    --gruen: #2e7d4f; --gruen-hell: #e7f4ec;
+    --orange: #c0611b; --orange-hell: #fbefe5;
+    --grau: #4a5260; --grau-hell: #f1f2f4;
+    --gelb: #f4c430; --gelb-hell: #fff8dc;
+    --text: #1d2228; --linie: #d5d9df;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: "Carlito", "Liberation Sans", sans-serif; font-size: 10.2pt; line-height: 1.3; color: var(--text); margin: 0; background: #fff; }
+  h1 { font-size: 19pt; margin: 0 0 2px; color: var(--blau); letter-spacing: -0.3px; }
+  .unter { color: var(--grau); margin: 0 0 8px; font-size: 9.5pt; }
+  .kopf { border-bottom: 3px solid var(--blau); padding-bottom: 6px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+  .mitbringen { background: var(--grau-hell); border-radius: 6px; padding: 5px 9px; font-size: 8.6pt; color: var(--grau); }
+  h2.teil { font-size: 13pt; color: #fff; padding: 5px 10px; border-radius: 6px; margin: 10px 0 7px; break-after: avoid; }
+  .teilA { background: var(--blau); } .teilB { background: var(--gruen); } .teilC { background: var(--orange); } .teilD { background: var(--grau); }
+  .karte { border: 1px solid var(--linie); border-radius: 7px; padding: 6px 9px 7px; margin-bottom: 7px; break-inside: avoid; }
+  .karte h3 { font-size: 10.6pt; margin: 0 0 3px; color: var(--blau); }
+  .karte h3 .nr { display: inline-block; background: var(--blau); color: #fff; border-radius: 50%; width: 17px; height: 17px; text-align: center; font-size: 8.4pt; line-height: 17px; margin-right: 5px; vertical-align: 1px; }
+  .b .karte h3 { color: var(--gruen); } .b .karte h3 .nr { background: var(--gruen); }
+  p { margin: 2px 0 3px; }
+  ul { margin: 2px 0 3px; padding-left: 15px; } li { margin: 1px 0; }
+  .merk { background: var(--gelb-hell); border-left: 4px solid var(--gelb); border-radius: 4px; padding: 3px 7px; margin-top: 4px; font-weight: 600; }
+  .merk::before { content: "Merksatz: "; color: #9a6b00; font-weight: 700; }
+  .hinweis { background: var(--grau-hell); border-radius: 4px; padding: 3px 7px; margin-top: 4px; font-size: 8.5pt; color: var(--grau); }
+  table { width: 100%; border-collapse: collapse; margin: 3px 0; font-size: 8.8pt; }
+  th, td { border: 1px solid var(--linie); padding: 3px 5px; text-align: left; vertical-align: top; }
+  th { background: var(--blau-hell); }
+  .zwei { display: grid; grid-template-columns: 1fr 1fr; gap: 0 8px; }
+  .zwei > .karte { margin-bottom: 7px; }
+  .b .karte { border-color: #cfe5d8; }
+  .b p { margin: 1px 0; }
+  .fragen { counter-reset: f; }
+  .fragen h4, .loes h4 { margin: 6px 0 3px; font-size: 10pt; }
+  .afb { display: inline-block; font-size: 8pt; font-weight: 700; border-radius: 4px; padding: 0 5px; color: #fff; margin-right: 4px; }
+  .a1 { background: #5b8fd0; } .a2 { background: #2f6db4; } .a3 { background: #173f72; }
+  .fragen ol, .loes ol { margin: 2px 0 4px; padding-left: 20px; }
+  .fragen li { margin: 2px 0; }
+  .loes li { margin: 2px 0; }
+  .loes { font-size: 9pt; }
+  .pro { color: var(--gruen); font-weight: 700; } .contra { color: #b23a3a; font-weight: 700; }
+  .seitenumbruch { break-before: page; }
+  svg text { font-family: "Carlito", "Liberation Sans", sans-serif; }
+  .klein { font-size: 8.4pt; color: var(--grau); }
+</style>
+</head>
+<body>
+
+<div class="kopf">
+  <div>
+    <h1>Lernzettel Politik-Wirtschaft · Klasse 8</h1>
+    <p class="unter">Vorbereitung auf die Klassenarbeit · passend zu „Politik &amp; Co. Niedersachsen 8“ · Teil A: Erklärungen · Teil B: Beispiele · Teil C: Fragen · Teil D: Lösungen</p>
+  </div>
+  <div class="mitbringen"><b>Zur KA mitbringen:</b><br>richtigen Stift (nicht radierbar), Lineal, Marker</div>
+</div>
+
+<!-- ===================== TEIL A ===================== -->
+<h2 class="teil teilA">Teil A · Kurz erklärt – mit Merksätzen</h2>
+
+<div class="karte">
+  <h3><span class="nr">1</span>Operatoren &amp; Anforderungsbereiche (AFB)</h3>
+  <p><b>Operatoren</b> sind die Arbeitsanweisungen (Verben) in einer Aufgabe. Sie zeigen, was du tun sollst und welcher AFB gemeint ist. Die vollständige Liste steht im Buch hinten auf <b>S. 169</b>.</p>
+  <table>
+    <tr><th style="width:17%">AFB</th><th style="width:31%">Typische Operatoren</th><th>So schreibst du die Antwort</th></tr>
+    <tr><td><b>I – Wiedergeben</b></td><td>nennen, benennen, beschreiben, wiedergeben, zusammenfassen, darstellen</td><td>Wissen sachlich wiedergeben, <b>ohne</b> eigene Meinung. Bei „nennen“ reichen Stichpunkte.</td></tr>
+    <tr><td><b>II – Erklären / Anwenden</b></td><td>erklären, erläutern, vergleichen, einordnen, zuordnen, analysieren, herausarbeiten</td><td>Zusammenhänge zeigen: <b>Aussage → Begründung („weil …“) → Beispiel („z. B. …“)</b>.</td></tr>
+    <tr><td><b>III – Beurteilen</b></td><td>beurteilen, bewerten, Stellung nehmen, begründen, überprüfen, diskutieren</td><td><b>Einleitung</b> (Frage aufgreifen) → <b>Pro</b> → <b>Contra</b> → <b>Abwägung</b> → <b>Fazit</b> mit eigener, begründeter Meinung.</td></tr>
+  </table>
+  <div class="merk">AFB I = Was? · AFB II = Warum und wie? · AFB III = Was meine ich – und warum?</div>
+</div>
+
+<div class="zwei">
+  <div class="karte">
+    <h3><span class="nr">2</span>Partizipation</h3>
+    <p><b>Partizipation</b> = Teilhabe, also die Beteiligung der Bürger an politischen Entscheidungen (lat. <i>participare</i> = teilnehmen).</p>
+    <p><b>Formen:</b> wählen, demonstrieren, Unterschriften sammeln (Petition), Bürgerinitiative, Mitglied in einer Partei oder Jugendorganisation, Bürgerbegehren/Bürgerentscheid, Einwohnerfragestunde im Rat, Jugendparlament, Schülervertretung, Leserbrief oder Social Media, Politiker anschreiben.</p>
+    <div class="merk">Partizipation heißt: mitmachen statt zuschauen.</div>
+  </div>
+  <div class="karte">
+    <h3><span class="nr">3</span>Gerecht entscheiden – wer entscheidet?</h3>
+    <table>
+      <tr><th>Wer?</th><th>Vorteil</th><th>Nachteil</th></tr>
+      <tr><td><b>Alle</b></td><td>alle beteiligt, hohe Akzeptanz</td><td>langsam, aufwendig</td></tr>
+      <tr><td><b>Eine Person</b></td><td>schnell, klare Verantwortung</td><td>Willkür möglich, andere werden nicht gehört</td></tr>
+      <tr><td><b>Kleine Gruppe</b> (gewählt)</td><td>schneller als alle, Fachwissen</td><td>nicht alle direkt beteiligt</td></tr>
+    </table>
+    <p class="klein">Kriterien: Beteiligung, Akzeptanz, Schnelligkeit, Sachkenntnis, Schutz von Minderheiten. Auch Losen ist möglich: neutral, aber zufällig.</p>
+    <div class="merk">Gerecht ist eine Entscheidung, wenn die Betroffenen beteiligt sind und die Regeln vorher für alle gleich gelten.</div>
+  </div>
+</div>
+
+<div class="karte">
+  <h3><span class="nr">4</span>Mehrheitsregeln <span class="klein" style="font-weight:400">(Zahlenbeispiel: Klasse mit 30 Schülern)</span></h3>
+  <table>
+    <tr><th style="width:21%">Regel</th><th style="width:43%">Bedeutung</th><th style="width:16%">Bei 30 Stimmen</th><th>Entscheidung …</th></tr>
+    <tr><td><b>Einstimmigkeit</b></td><td>Alle müssen zustimmen. Einer allein kann blockieren (Veto).</td><td>30 von 30</td><td>sehr schwer, Akzeptanz am höchsten</td></tr>
+    <tr><td><b>Qualifizierte Mehrheit</b><br>z. B. Zweidrittelmehrheit</td><td>Eine größere Mehrheit als die Hälfte ist nötig, z. B. 2/3. Beispiel: Änderung des Grundgesetzes.</td><td>mind. 20</td><td>schwer, hohe Akzeptanz</td></tr>
+    <tr><td><b>Absolute Mehrheit</b></td><td>Mehr als die Hälfte aller Stimmen (50 % + 1).</td><td>mind. 16</td><td>mittel</td></tr>
+    <tr><td><b>Einfache Mehrheit</b></td><td>Mehr Ja- als Nein-Stimmen. Enthaltungen zählen nicht.</td><td>z. B. 12 Ja, 10 Nein, 8 Enth.</td><td>leicht, viele evtl. unzufrieden</td></tr>
+    <tr><td><b>Relative Mehrheit</b></td><td>Bei mehreren Möglichkeiten gewinnt die mit den meisten Stimmen.</td><td>z. B. A 12, B 10, C 8 → A</td><td>leicht, Minderheit kann gewinnen</td></tr>
+  </table>
+  <div class="merk">Je mehr Stimmen nötig sind, desto schwerer die Entscheidung – aber desto mehr Menschen tragen sie mit.</div>
+</div>
+
+<div class="zwei">
+  <div class="karte">
+    <h3><span class="nr">5</span>Die drei Dimensionen von Politik</h3>
+    <table>
+      <tr><th>Dimension</th><th>Was gehört dazu?</th></tr>
+      <tr><td><b>Polity</b><br>= Form</td><td>Rahmen und Regeln: Grundgesetz, Gesetze, Institutionen (Rat, Bundestag). <i>Wer darf wie entscheiden?</i></td></tr>
+      <tr><td><b>Policy</b><br>= Inhalt</td><td>Probleme, Ziele, Lösungen, Politikfelder (Umwelt, Schule …). <i>Worum geht es?</i></td></tr>
+      <tr><td><b>Politics</b><br>= Prozess</td><td>Interessen, Streit, Macht, Verhandeln, Kompromiss. <i>Wie wird entschieden?</i></td></tr>
+    </table>
+    <p class="klein">Eselsbrücke: Poli<b>c</b>y = <b>C</b>ontent (Inhalt). Poli<b>t</b>ics = <b>T</b>aktik und Streit. Polit<b>y</b> = das feste Gerüst.</p>
+    <div class="merk">Polity – Policy – Politics = Form – Inhalt – Prozess.</div>
+  </div>
+  <div class="karte">
+    <h3><span class="nr">6</span>Demokratie: Wort &amp; zwei Formen</h3>
+    <p><b>Demokratie</b> (griech.): <i>demos</i> = Volk, <i>kratein</i> = herrschen. Also: <b>Herrschaft des Volkes</b>. Im Grundgesetz (Art. 20) steht: „Alle Staatsgewalt geht vom Volke aus.“</p>
+    <ul>
+      <li><b>Direkte Demokratie:</b> Das Volk entscheidet selbst über Sachfragen, z. B. per Volksentscheid oder in der Gemeinde per Bürgerentscheid. Beispiel: Schweiz.</li>
+      <li><b>Repräsentative (indirekte) Demokratie:</b> Das Volk wählt Vertreter, die auf Zeit entscheiden. Beispiel: Bundestag in Deutschland.</li>
+    </ul>
+    <p class="klein">Deutschland ist vor allem repräsentativ. Direkte Elemente gibt es in Ländern und Gemeinden.</p>
+    <div class="merk">Direkt: Das Volk entscheidet selbst. Repräsentativ: Das Volk wählt, wer entscheidet.</div>
+  </div>
+</div>
+
+<div class="zwei">
+  <div class="karte">
+    <h3><span class="nr">7</span>Direkte Demokratie: Vor- und Nachteile</h3>
+    <p><span class="pro">Vorteile:</span></p>
+    <ul>
+      <li>mehr Mitbestimmung, Bürger haben direkten Einfluss</li>
+      <li>Ergebnisse werden eher akzeptiert</li>
+      <li>Bürger informieren sich mehr, weniger Politikverdrossenheit</li>
+    </ul>
+    <p><span class="contra">Nachteile:</span></p>
+    <ul>
+      <li>schwierige Themen lassen sich kaum mit Ja/Nein entscheiden</li>
+      <li>anfällig für Stimmungsmache und Falschinfos</li>
+      <li>oft geringe Beteiligung: eine kleine aktive Gruppe entscheidet</li>
+      <li>kein Kompromiss möglich, Minderheiten werden überstimmt</li>
+    </ul>
+    <div class="merk">Direkte Demokratie bringt mehr Mitsprache, aber nicht automatisch bessere Entscheidungen.</div>
+  </div>
+  <div class="karte">
+    <h3><span class="nr">8</span>Politikverdrossenheit</h3>
+    <p><b>Politikverdrossenheit</b> = Unzufriedenheit, Desinteresse und Misstrauen gegenüber Politik, Politikern und Parteien.</p>
+    <ul>
+      <li><b>Ursachen:</b> Gefühl „Die da oben hören nicht zu“, gebrochene Versprechen, Skandale, Politik wirkt kompliziert.</li>
+      <li><b>Folgen:</b> weniger Menschen gehen wählen, Protestwahl, weniger Engagement. Die Demokratie wird geschwächt.</li>
+      <li><b>Was hilft:</b> mehr Beteiligung (z. B. Jugendparlament), offene Information, politische Bildung.</li>
+    </ul>
+    <div class="merk">Wer verdrossen ist, macht nicht mehr mit – und dann entscheiden andere.</div>
+  </div>
+</div>
+
+<div class="karte">
+  <h3><span class="nr">9</span>Wahlrecht: aktiv &amp; passiv, Wahlalter, Wahlrechtsgrundsätze</h3>
+  <div class="zwei" style="gap:0 12px">
+    <div>
+      <p><b>Aktives Wahlrecht</b> = wählen dürfen. <b>Passives Wahlrecht</b> = gewählt werden dürfen.</p>
+      <table>
+        <tr><th>Wahl</th><th>aktiv</th><th>passiv</th></tr>
+        <tr><td>Kommunalwahl Niedersachsen (Rat)</td><td>16</td><td>18</td></tr>
+        <tr><td>Bürgermeisterwahl Niedersachsen</td><td>16</td><td>23</td></tr>
+        <tr><td>Landtagswahl Niedersachsen</td><td>18</td><td>18</td></tr>
+        <tr><td>Bundestagswahl</td><td>18</td><td>18</td></tr>
+        <tr><td>Europawahl</td><td>16</td><td>18</td></tr>
+      </table>
+    </div>
+    <div>
+      <p><b>Warum ein Mindestalter?</b> Wählen braucht Reife, Urteilsvermögen und Wissen über Politik. Mit 18 ist man volljährig und trägt volle Verantwortung.</p>
+      <p><b>Warum passiv höher?</b> Wer gewählt wird, entscheidet für andere. Dafür braucht man mehr Erfahrung.</p>
+      <p><b>Pro Wählen ab 16:</b> Jugendliche sind von Entscheidungen betroffen (Schule, Klima, Zukunft). Früh wählen weckt Interesse.</p>
+      <p><b>Wahlrechtsgrundsätze</b> (Art. 38 GG): <b>a</b>llgemein (alle ab Wahlalter), <b>u</b>nmittelbar (direkt), <b>f</b>rei (ohne Zwang), <b>g</b>leich (jede Stimme zählt gleich), <b>g</b>eheim (keiner sieht, was ich wähle).</p>
+    </div>
+  </div>
+  <div class="merk">Aktiv: Ich wähle. Passiv: Ich werde gewählt. · Wahlrechtsgrundsätze: „A-U-F-G-G – steht im GG“.</div>
+</div>
+
+<div class="zwei">
+  <div class="karte">
+    <h3><span class="nr">10</span>Kumulieren &amp; Panaschieren</h3>
+    <p>Bei der Kommunalwahl in Niedersachsen hat jeder <b>3 Stimmen</b>.</p>
+    <ul>
+      <li><b>Kumulieren</b> (lat. <i>cumulus</i> = Haufen): Stimmen <b>häufeln</b>, also bis zu 3 Stimmen für eine Person geben.</li>
+      <li><b>Panaschieren</b> (frz. <i>panaché</i> = gemischt): Stimmen auf Kandidaten <b>verschiedener Parteien</b> verteilen.</li>
+    </ul>
+    <p>So können Wähler gezielt Personen stärken und haben mehr Einfluss.</p>
+    <div class="merk">Kumulieren = häufeln. Panaschieren = mischen.</div>
+  </div>
+  <div class="karte">
+    <h3><span class="nr">11</span>Gemeinwohl &amp; Partikularinteresse</h3>
+    <ul>
+      <li><b>Gemeinwohl</b> = das Wohl und der Nutzen für die Allgemeinheit, also für alle Bürger.</li>
+      <li><b>Partikularinteresse</b> = das Interesse einzelner Personen oder Gruppen (lat. <i>pars</i> = Teil).</li>
+    </ul>
+    <p>Politik muss zwischen beidem abwägen. Oft endet das in einem Kompromiss.</p>
+    <div class="merk">Gemeinwohl = gut für alle. Partikularinteresse = gut für einen Teil.</div>
+  </div>
+</div>
+
+<div class="karte">
+  <h3><span class="nr">12</span>Aufgaben der Gemeinde</h3>
+  <table>
+    <tr><th style="width:24%">Art</th><th style="width:36%">Bedeutung</th><th>Beispiele</th></tr>
+    <tr><td><b>Pflichtaufgaben</b> (eigene)</td><td>Die Gemeinde <b>muss</b> sie erledigen. <b>Wie</b> sie es macht, entscheidet sie selbst.</td><td>Feuerwehr, Kita-Plätze, Grundschulgebäude, Wasser und Abwasser, Gemeindestraßen, Bebauungspläne</td></tr>
+    <tr><td><b>Pflichtaufgaben im Auftrag</b> von Land oder Bund</td><td>Die Gemeinde <b>muss</b> sie erledigen und folgt dabei <b>Weisungen</b>.</td><td>Meldeamt, Personalausweis und Pass, Standesamt, Durchführung von Wahlen</td></tr>
+    <tr><td><b>Freiwillige Aufgaben</b></td><td>Die Gemeinde <b>kann</b> sie erledigen, wenn Geld da ist.</td><td>Schwimmbad, Bücherei, Museum, Theater, Jugendzentrum, Sportplätze, Städtepartnerschaft</td></tr>
+  </table>
+  <div class="merk">Pflicht = muss sein. Freiwillig = kann sein – wenn Geld da ist. Bei Geldnot wird zuerst bei den freiwilligen Aufgaben gespart.</div>
+</div>
+
+<div class="karte">
+  <h3><span class="nr">13</span>Organe der Gemeinde (Niedersachsen) &amp; Machtverhältnisse</h3>
+  <table>
+      <tr><th style="width:16%">Organ</th><th style="width:36%">Wahl &amp; Zusammensetzung</th><th style="width:10%">Amtsdauer</th><th>Aufgaben</th></tr>
+      <tr><td><b>Rat</b><br>(„Gemeindeparlament“)</td><td>von den Bürgern gewählt (Kommunalwahl). Ratsfrauen und Ratsherren plus Bürgermeister. Den Vorsitz wählt der Rat selbst.</td><td>5 Jahre</td><td>Hauptorgan: beschließt alles Wichtige (Haushalt, Satzungen, Gebühren, Baupläne). Kontrolliert den Bürgermeister.</td></tr>
+      <tr><td><b>Verwaltungsausschuss</b></td><td>Bürgermeister (Vorsitz) plus Beigeordnete. Die Beigeordneten sind Ratsmitglieder, verteilt nach Stärke der Fraktionen.</td><td>5 Jahre (wie der Rat)</td><td>bereitet Ratsbeschlüsse vor. Entscheidet, was weder Rat noch Bürgermeister zusteht. Tagt nicht öffentlich.</td></tr>
+      <tr><td><b>Bürgermeister/in</b></td><td>direkt von den Bürgern gewählt. Nötig ist die absolute Mehrheit, sonst gibt es eine Stichwahl.</td><td>8 Jahre</td><td>leitet die Verwaltung, vertritt die Gemeinde nach außen, bereitet Beschlüsse vor und führt sie aus. Hat Stimmrecht im Rat.</td></tr>
+    </table>
+  <div class="zwei" style="grid-template-columns: 0.8fr 1.2fr; gap: 0 12px; align-items:center; margin-top:4px">
+    <div><svg viewBox="0 0 300 215" width="100%" role="img" aria-label="Zusammenspiel der Gemeindeorgane">
+        <defs>
+          <marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5260"/></marker>
+        </defs>
+        <rect x="75" y="4" width="150" height="30" rx="6" fill="#e8f0fa" stroke="#1f5fa8"/>
+        <text x="150" y="23" text-anchor="middle" font-size="10" font-weight="700" fill="#1d2228">Bürgerinnen und Bürger</text>
+        <rect x="5" y="86" width="110" height="38" rx="6" fill="#fff" stroke="#1f5fa8" stroke-width="1.5"/>
+        <text x="60" y="102" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1f5fa8">Rat</text>
+        <text x="60" y="116" text-anchor="middle" font-size="8.5" fill="#4a5260">5 J. · beschließt</text>
+        <rect x="185" y="86" width="110" height="38" rx="6" fill="#fff" stroke="#1f5fa8" stroke-width="1.5"/>
+        <text x="240" y="102" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1f5fa8">Bürgermeister/in</text>
+        <text x="240" y="116" text-anchor="middle" font-size="8.5" fill="#4a5260">8 J. · führt aus</text>
+        <rect x="80" y="172" width="140" height="38" rx="6" fill="#fff" stroke="#1f5fa8" stroke-width="1.5"/>
+        <text x="150" y="188" text-anchor="middle" font-size="10" font-weight="700" fill="#1f5fa8">Verwaltungsausschuss</text>
+        <text x="150" y="202" text-anchor="middle" font-size="8.5" fill="#4a5260">5 J. · bereitet vor</text>
+        <line x1="115" y1="34" x2="62" y2="84" stroke="#4a5260" stroke-width="1.3" marker-end="url(#pf)"/>
+        <text x="58" y="56" font-size="8.5" fill="#4a5260">wählen</text>
+        <line x1="185" y1="34" x2="238" y2="84" stroke="#4a5260" stroke-width="1.3" marker-end="url(#pf)"/>
+        <text x="218" y="56" font-size="8.5" fill="#4a5260">wählen direkt</text>
+        <line x1="117" y1="105" x2="183" y2="105" stroke="#4a5260" stroke-width="1.3" marker-start="url(#pf)" marker-end="url(#pf)"/>
+        <text x="150" y="99" text-anchor="middle" font-size="8" fill="#4a5260">kontrolliert</text>
+        <text x="150" y="117" text-anchor="middle" font-size="8" fill="#4a5260">Einspruch</text>
+        <line x1="60" y1="124" x2="112" y2="170" stroke="#4a5260" stroke-width="1.3" marker-end="url(#pf)"/>
+        <text x="8" y="150" font-size="8" fill="#4a5260">bestimmt</text>
+        <text x="8" y="160" font-size="8" fill="#4a5260">Beigeordnete</text>
+        <line x1="240" y1="124" x2="188" y2="170" stroke="#4a5260" stroke-width="1.3" marker-end="url(#pf)"/>
+        <text x="230" y="153" font-size="8" fill="#4a5260">Vorsitz</text>
+      </svg></div>
+    <div><p><b>Machtverhältnisse:</b> Der <b>Rat</b> ist das wichtigste Organ, weil er alles Grundsätzliche beschließt und den Bürgermeister kontrolliert. Der <b>Bürgermeister</b> ist trotzdem stark: Er ist direkt gewählt, leitet die Verwaltung und weiß dadurch oft mehr. Außerdem sitzt er in Rat und Verwaltungsausschuss. Die Organe sind aufeinander angewiesen: Ohne Ratsbeschluss kann der Bürgermeister nichts Wichtiges umsetzen, ohne Verwaltung kann der Rat nichts verwirklichen.</p></div>
+  </div>
+  <div class="hinweis">Achtung Amtszeit: Seit der Kommunalwahl 2026 werden Bürgermeister in Niedersachsen wieder für 8 Jahre gewählt, vorher waren es 5 Jahre. Steht im Buch noch „5 Jahre“, frag deine Lehrkraft, welche Zahl in der KA gilt. Im Gesetz heißt der Verwaltungsausschuss allgemein „Hauptausschuss“.</div>
+  <div class="merk">Der Rat beschließt, der Verwaltungsausschuss bereitet vor, der Bürgermeister führt aus.</div>
+</div>
+
+<div class="karte">
+  <h3><span class="nr">14</span>Kommunale Selbstverwaltung · Subsidiaritätsprinzip · Legitimation</h3>
+  <ul>
+    <li><b>Kommunale Selbstverwaltung:</b> Gemeinden dürfen alle Angelegenheiten der örtlichen Gemeinschaft im Rahmen der Gesetze selbst regeln (Art. 28 Abs. 2 GG). Dafür haben sie eigenes Geld (z. B. Gewerbesteuer, Gebühren), eigene Satzungen und eigenes Personal.</li>
+    <li><b>Subsidiaritätsprinzip:</b> Eine Aufgabe erledigt die kleinste Ebene, die das schafft: Gemeinde → Landkreis → Land → Bund → EU. Die höhere Ebene hilft nur, wenn die untere überfordert ist.</li>
+    <li><b>Legitimation:</b> die Rechtfertigung von Macht. In der Demokratie ist Macht legitimiert, wenn sie vom Volk ausgeht, vor allem durch Wahlen. Der direkt gewählte Bürgermeister hat eine starke, direkte Legitimation. Der Verwaltungsausschuss ist nur indirekt über den Rat legitimiert.</li>
+  </ul>
+  <p><b>Warum entscheidet die Gemeinde vieles selbst?</b> Das Grundgesetz garantiert ihr die Selbstverwaltung. Nach dem Subsidiaritätsprinzip soll entscheiden, wer am nächsten dran ist. Die Gemeinde kennt die Lage vor Ort am besten, und Rat und Bürgermeister sind von den Bürgern gewählt.</p>
+  <div class="merk">Subsidiarität: So nah wie möglich, so hoch wie nötig. · Legitimation: Wer gewählt ist, darf entscheiden – auf Zeit und im Auftrag der Bürger.</div>
+</div>
+
+<!-- ===================== TEIL B ===================== -->
+<h2 class="teil teilB">Teil B · Beispiele (kurz)</h2>
+<div class="b">
+<div class="zwei">
+  <div class="karte"><h3><span class="nr">1</span>Ein Thema, drei AFB</h3>
+    <p><b>I:</b> „Nenne zwei Formen der Partizipation.“ → Wählen, demonstrieren.</p>
+    <p><b>II:</b> „Erkläre, warum Wahlen Partizipation sind.“ → Bei Wahlen bestimmen Bürger ihre Vertreter. Dadurch beeinflussen sie Entscheidungen, z. B. über ein neues Freibad.</p>
+    <p><b>III:</b> „Beurteile, ob man ab 16 den Landtag wählen sollte.“ → Pro, Contra, Abwägung, Fazit.</p>
+  </div>
+  <div class="karte"><h3><span class="nr">2</span>Partizipation</h3>
+    <p>Die Gemeinde will den Bolzplatz schließen. Jugendliche sammeln 300 Unterschriften, sprechen in der Einwohnerfragestunde des Rates und schreiben einen Leserbrief. Der Rat vertagt die Entscheidung.</p>
+  </div>
+  <div class="karte"><h3><span class="nr">3</span>Gerecht entscheiden</h3>
+    <p>Ziel der Klassenfahrt: Die Lehrerin entscheidet allein – schnell, aber viele sind sauer. Die Klasse stimmt ab – alle sind beteiligt, es dauert aber. Ein gewählter Klassenrat aus 5 Schülern entscheidet – schnell und trotzdem legitimiert.</p>
+  </div>
+  <div class="karte"><h3><span class="nr">4</span>Mehrheitsregeln</h3>
+    <p>27 Schüler stimmen ab: Berlin 11, Hamburg 9, Harz 7.</p>
+    <p><b>Relative Mehrheit:</b> Berlin gewinnt. <b>Absolute Mehrheit</b> (mind. 14): keiner hat sie, also Stichwahl Berlin gegen Hamburg – wie bei der Bürgermeisterwahl. <b>Zweidrittelmehrheit</b> (mind. 18) und <b>Einstimmigkeit</b>: keine Entscheidung.</p>
+  </div>
+  <div class="karte"><h3><span class="nr">5</span>Drei Dimensionen: neues Hallenbad</h3>
+    <p><b>Polity:</b> Der Rat entscheidet nach der Kommunalverfassung. <b>Policy:</b> Schwimmunterricht sichern, Kosten 8 Mio. €. <b>Politics:</b> Partei A ist dafür, Partei B will sparen, eine Bürgerinitiative macht Druck. Ergebnis: Kompromiss mit kleinerem Bad.</p>
+  </div>
+  <div class="karte"><h3><span class="nr">6</span>Demokratieformen</h3>
+    <p>In der Schweiz stimmen die Bürger mehrmals im Jahr direkt über Sachfragen ab. In Deutschland wählt man den Bundestag, und der beschließt die Gesetze. In einer Gemeinde stimmen die Bürger per Bürgerentscheid über ein neues Gewerbegebiet ab.</p>
+  </div>
+  <div class="karte"><h3><span class="nr">7</span>Direkte Demokratie</h3>
+    <p>Bürgerentscheid über einen Windpark. <span class="pro">Pro:</span> Die Bürger entscheiden selbst, das Ergebnis wird akzeptiert. <span class="contra">Contra:</span> Nur 25 % stimmen ab, also entscheidet eine kleine Gruppe. Schwierige Fragen wie Energiebedarf und Kosten werden auf Ja oder Nein verkürzt.</p>
+  </div>
+  <div class="karte"><h3><span class="nr">8</span>Politikverdrossenheit</h3>
+    <p>Tim (19) sagt: „Wählen bringt eh nichts.“ Er geht nicht wählen, viele Freunde auch nicht. Die Parteien kümmern sich dann weniger um junge Leute. Das bestätigt Tims Frust – ein Teufelskreis.</p>
+  </div>
+  <div class="karte"><h3><span class="nr">9</span>Wahlrecht</h3>
+    <p>Lena ist 16. Sie darf bei der Kommunalwahl und der Europawahl wählen (aktives Wahlrecht). Für den Rat kandidieren darf sie erst mit 18 (passives Wahlrecht). Den Bundestag wählt sie ebenfalls erst mit 18.</p>
+  </div>
+  <div class="karte"><h3><span class="nr">10</span>Kumulieren &amp; Panaschieren</h3>
+    <p>Ayse hat 3 Stimmen. Sie gibt <b>2 Stimmen</b> Frau Meier (Partei A): Das ist <b>kumulieren</b>. Die <b>3. Stimme</b> gibt sie Herrn Schulz (Partei B): Das ist <b>panaschieren</b>.</p>
+  </div>
+  <div class="karte"><h3><span class="nr">11</span>Gemeinwohl vs. Partikularinteresse</h3>
+    <p>Eine Umgehungsstraße soll gebaut werden. <b>Gemeinwohl:</b> weniger Lärm und Abgase in der Innenstadt. <b>Partikularinteressen:</b> Ein Landwirt verliert seinen Acker, Anwohner am Stadtrand wollen keinen Lärm.</p>
+  </div>
+  <div class="karte"><h3><span class="nr">12</span>Aufgaben der Gemeinde</h3>
+    <p>Die Gemeinde hat zu wenig Geld. Feuerwehr und Grundschule (Pflicht) müssen bleiben. Das Freibad (freiwillig) wird vielleicht geschlossen.</p>
+  </div>
+  <div class="karte"><h3><span class="nr">13</span>Organe: der Weg zum Skatepark</h3>
+    <p>Jugendliche stellen einen Antrag. → Bürgermeister und Verwaltung prüfen Ort und Kosten und schreiben eine Vorlage. → Der Verwaltungsausschuss berät (nicht öffentlich). → Der Rat beschließt (öffentlich). → Der Bürgermeister lässt den Park bauen.</p>
+  </div>
+  <div class="karte"><h3><span class="nr">14</span>Selbstverwaltung &amp; Subsidiarität</h3>
+    <p>Ob die Stadt einen Skatepark baut, entscheidet der Rat vor Ort und nicht der Bundestag in Berlin. Der Rat kennt die Lage am besten (Subsidiarität) und ist von den Bürgern gewählt (Legitimation).</p>
+  </div>
+</div>
+</div>
+
+<!-- ===================== TEIL C ===================== -->
+<h2 class="teil teilC">Teil C · Teste dich selbst</h2>
+<div class="fragen">
+  <h4><span class="afb a1">AFB I</span>Wiedergeben</h4>
+  <ol>
+    <li>Nenne vier Formen politischer Partizipation.</li>
+    <li>Übersetze den Begriff „Demokratie“.</li>
+    <li>Benenne die drei Dimensionen von Politik.</li>
+    <li>Nenne die fünf Wahlrechtsgrundsätze.</li>
+    <li>Nenne die drei Organe einer Gemeinde in Niedersachsen und ihre Amtsdauer.</li>
+    <li>Gib das aktive und passive Wahlalter für die Kommunalwahl (Rat) und die Bundestagswahl an.</li>
+    <li>Ordne zu – Pflichtaufgabe oder freiwillige Aufgabe? Feuerwehr, Hallenbad, Standesamt, Bücherei, Kita, Jugendzentrum, Abwasser, Theater.</li>
+  </ol>
+  <h4><span class="afb a2">AFB II</span>Erklären &amp; anwenden</h4>
+  <ol start="8">
+    <li>Erkläre den Unterschied zwischen aktivem und passivem Wahlrecht.</li>
+    <li>Im Rat sitzen 36 Mitglieder, alle sind da. Ergebnis: 15 Ja, 12 Nein, 9 Enthaltungen. Ist der Antrag angenommen bei a) einfacher Mehrheit, b) absoluter Mehrheit aller 36 Mitglieder, c) Zweidrittelmehrheit?</li>
+    <li>Erkläre, warum bei Einstimmigkeit die Entscheidung schwer, die Akzeptanz aber hoch ist.</li>
+    <li>Erkläre kumulieren und panaschieren an einem eigenen Beispiel mit 3 Stimmen.</li>
+    <li>Ordne zu – Polity, Policy oder Politics? a) Der Rat hat 30 Mitglieder. b) Die Parteien streiten über die Kosten. c) Ziel: mehr Radwege. d) Das Grundgesetz garantiert die Selbstverwaltung. e) Man einigt sich auf einen Kompromiss.</li>
+    <li>Erkläre die Begriffe Gemeinwohl und Partikularinteresse an einem Beispiel.</li>
+    <li>Erkläre, wie Rat, Verwaltungsausschuss und Bürgermeister zusammenarbeiten.</li>
+    <li>Erkläre, warum der Bürgermeister eine starke Stellung hat.</li>
+    <li>Erkläre den Begriff Politikverdrossenheit und nenne zwei Folgen.</li>
+    <li>Erkläre, warum eine Gemeinde viele Entscheidungen selbst treffen kann. Verwende die Begriffe kommunale Selbstverwaltung und Subsidiaritätsprinzip.</li>
+    <li>Erkläre den Begriff Legitimation am Beispiel der Gemeinde.</li>
+  </ol>
+  <h4><span class="afb a3">AFB III</span>Beurteilen</h4>
+  <ol start="19">
+    <li>Beurteile, ob die direkte Demokratie die politische Mitbestimmung stärkt.</li>
+    <li>Nimm Stellung: „Das Wahlalter für die Landtagswahl sollte auf 16 gesenkt werden.“</li>
+    <li>Bewerte, welche Mehrheitsregel für die Wahl des Klassenfahrtziels am gerechtesten ist.</li>
+  </ol>
+</div>
+
+<!-- ===================== TEIL D ===================== -->
+<h2 class="teil teilD">Teil D · Lösungen (Kurzfassung)</h2>
+<div class="loes">
+  <ol>
+    <li>Zum Beispiel: wählen, demonstrieren, Petition unterschreiben, in einer Partei mitarbeiten, Bürgerinitiative, Bürgerentscheid.</li>
+    <li><i>demos</i> = Volk, <i>kratein</i> = herrschen, also „Herrschaft des Volkes“.</li>
+    <li>Polity (Form), Policy (Inhalt), Politics (Prozess).</li>
+    <li>allgemein, unmittelbar, frei, gleich, geheim.</li>
+    <li>Rat (5 Jahre), Verwaltungsausschuss (5 Jahre, wie der Rat), Bürgermeister/in (8 Jahre, früher 5).</li>
+    <li>Kommunalwahl: aktiv 16, passiv 18. Bundestagswahl: aktiv 18, passiv 18.</li>
+    <li>Pflicht: Feuerwehr, Standesamt (im Auftrag), Kita, Abwasser. Freiwillig: Hallenbad, Bücherei, Jugendzentrum, Theater.</li>
+    <li>Aktiv heißt, ich darf wählen. Passiv heißt, ich darf gewählt werden, also kandidieren. Für das passive Wahlrecht gilt oft ein höheres Alter, weil Gewählte für andere entscheiden.</li>
+    <li>a) Angenommen, weil 15 Ja mehr sind als 12 Nein. b) Abgelehnt, weil mindestens 19 Stimmen nötig sind. c) Abgelehnt, weil mindestens 24 Stimmen nötig sind.</li>
+    <li>Alle müssen zustimmen, und schon eine Gegenstimme blockiert. Deshalb kommt man schwer zu einer Entscheidung. Wenn sie aber fällt, haben alle zugestimmt. Niemand wurde überstimmt, deshalb wird sie von allen akzeptiert.</li>
+    <li>Zum Beispiel: 2 Stimmen für Kandidat X (kumulieren = häufeln) und 1 Stimme für Kandidatin Y von einer anderen Partei (panaschieren = mischen).</li>
+    <li>a) Polity, b) Politics, c) Policy, d) Polity, e) Politics.</li>
+    <li>Gemeinwohl ist der Nutzen für alle, Partikularinteresse der Nutzen für Einzelne oder Gruppen. Beispiel Umgehungsstraße: Die Innenstadt wird ruhiger (Gemeinwohl), aber ein Landwirt verliert seinen Acker (Partikularinteresse).</li>
+    <li>Bürgermeister und Verwaltung bereiten eine Vorlage vor. Der Verwaltungsausschuss berät sie und bereitet den Beschluss vor. Der Rat beschließt. Danach führt der Bürgermeister den Beschluss aus. Der Rat kontrolliert den Bürgermeister, und der Bürgermeister kann Einspruch einlegen.</li>
+    <li>Er ist direkt von den Bürgern gewählt und hat dadurch eine eigene Legitimation. Er leitet die Verwaltung und hat einen Wissensvorsprung. Er hat Stimmrecht im Rat und leitet den Verwaltungsausschuss.</li>
+    <li>Politikverdrossenheit ist Unzufriedenheit und Misstrauen gegenüber Politik, Politikern und Parteien. Folgen: geringere Wahlbeteiligung, Protestwahl, weniger Engagement.</li>
+    <li>Das Grundgesetz (Art. 28) garantiert die kommunale Selbstverwaltung: Gemeinden regeln örtliche Angelegenheiten selbst. Nach dem Subsidiaritätsprinzip erledigt die kleinste Ebene eine Aufgabe, wenn sie es kann. Die Gemeinde ist am nächsten an den Bürgern und kennt die Lage vor Ort.</li>
+    <li>Legitimation ist die Rechtfertigung von Macht. Der Rat und der Bürgermeister dürfen für die Gemeinde entscheiden, weil die Bürger sie gewählt haben.</li>
+    <li><b>Mögliche Lösung:</b> <span class="pro">Pro:</span> Bürger entscheiden direkt und nicht nur alle paar Jahre. Das Ergebnis wird eher akzeptiert, und Politikverdrossenheit kann sinken. <span class="contra">Contra:</span> Oft machen nur wenige mit. Schwierige Themen lassen sich kaum mit Ja oder Nein entscheiden, und Stimmungsmache ist möglich. <b>Fazit (Beispiel):</b> Als Ergänzung zur repräsentativen Demokratie stärkt sie die Mitbestimmung. Ersetzen sollte sie die gewählten Vertreter aber nicht.</li>
+    <li><span class="pro">Pro:</span> Jugendliche sind betroffen, z. B. von Schul- und Klimapolitik. Bei Kommunal- und Europawahl dürfen sie schon ab 16 wählen. Frühes Wählen weckt Interesse. <span class="contra">Contra:</span> Mit 18 ist man volljährig. Manche 16-Jährige interessieren sich wenig für Politik und sind leichter zu beeinflussen. <b>Fazit:</b> eigene Meinung mit Begründung.</li>
+    <li>Beispiel: Die absolute Mehrheit mit Stichwahl ist am gerechtesten. Dann steht mehr als die Hälfte hinter dem Ziel, und trotzdem fällt eine Entscheidung. Bei Einstimmigkeit kann einer alles blockieren. Bei relativer Mehrheit kann ein Ziel gewinnen, das die meisten gar nicht wollen.</li>
+  </ol>
+  <p class="klein" style="margin-top:6px">Tipp für AFB III: Erst Argumente sammeln, dann abwägen, dann ein klares Fazit mit „Ich finde …, weil …“. Ein Urteil ohne Begründung gibt kaum Punkte.</p>
+</div>
+
+</body>
+</html>
