@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Lernzettel Werte und Normen 5</title>
+<style>
+  @page { size: A4; }
+  :root {
+    --rot: #c0392b; --rot-hell: #fdecea; --rot-mittel: #f5c6c0;
+    --tuerkis: #127a7a; --tuerkis-hell: #e3f4f3; --tuerkis-mittel: #b5e0dd;
+    --gelb: #f2b705; --gelb-hell: #fff7d6;
+    --lila: #6b4fa3; --lila-hell: #efe9f9;
+    --gruen: #2e7d4f; --gruen-hell: #e7f4ec;
+    --grau: #4f5763; --grau-hell: #f2f3f5; --linie: #d9dde3; --text: #1f242b;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: "Carlito", "Liberation Sans", sans-serif; font-size: 12pt; line-height: 1.42; color: var(--text); margin: 0; background: #fff; }
+  .emo { font-family: "Noto Color Emoji", sans-serif; font-style: normal; }
+  h1 { font-size: 24pt; margin: 0; color: var(--rot); line-height: 1.1; }
+  .unter { margin: 3px 0 0; color: var(--grau); font-size: 12.5pt; }
+  .kopf { border-bottom: 4px solid var(--rot); padding-bottom: 8px; margin-bottom: 12px; }
+  h2.teil { font-size: 17pt; color: #fff; padding: 7px 12px; border-radius: 9px; margin: 14px 0 10px; break-after: avoid; }
+  .t1 { background: var(--rot); } .t2 { background: var(--tuerkis); } .t3 { background: var(--lila); } .t4 { background: var(--grau); } .t0 { background: var(--gruen); }
+  .karte { border: 2px solid var(--linie); border-radius: 12px; padding: 9px 13px 10px; margin-bottom: 11px; break-inside: avoid; }
+  .k1 { border-color: var(--rot-mittel); } .k2 { border-color: var(--tuerkis-mittel); }
+  .karte h3 { margin: 0 0 4px; font-size: 15pt; }
+  .k1 h3 { color: var(--rot); } .k2 h3 { color: var(--tuerkis); }
+  .seite { font-size: 10.5pt; font-weight: 400; color: var(--grau); background: var(--grau-hell); border-radius: 6px; padding: 1px 7px; margin-left: 6px; vertical-align: 2px; }
+  p { margin: 3px 0 5px; }
+  ul { margin: 3px 0 6px; padding-left: 20px; } li { margin: 2px 0; }
+  .merk { background: var(--gelb-hell); border: 2px solid var(--gelb); border-radius: 10px; padding: 6px 10px; margin-top: 7px; font-weight: 700; }
+  .merk .emo { margin-right: 4px; }
+  .woerter { background: var(--grau-hell); border-radius: 10px; padding: 5px 10px; margin-top: 7px; font-size: 11pt; }
+  .woerter b { color: var(--grau); }
+  .tipp { background: var(--gruen-hell); border-left: 5px solid var(--gruen); border-radius: 6px; padding: 4px 9px; margin: 4px 0 2px; font-size: 11pt; }
+  table { width: 100%; border-collapse: collapse; margin: 5px 0; font-size: 11.5pt; }
+  th, td { border: 1.5px solid var(--linie); padding: 5px 7px; text-align: left; vertical-align: top; }
+  th { background: var(--grau-hell); }
+  .k2 th { background: var(--tuerkis-hell); } .k1 th { background: var(--rot-hell); }
+  .zwei { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
+  .start { background: var(--gruen-hell); border: 2px solid #b9dfc8; border-radius: 12px; padding: 9px 13px; margin-bottom: 11px; break-inside: avoid; }
+  .start h3 { margin: 0 0 4px; color: var(--gruen); font-size: 15pt; }
+  .start ol { margin: 2px 0; padding-left: 22px; }
+  .aufg { font-size: 11.5pt; }
+  .aufg td:first-child { font-weight: 700; white-space: nowrap; width: 22%; }
+  .ueb { border: 2px solid #d6cbee; border-radius: 12px; padding: 8px 13px 9px; margin-bottom: 10px; break-inside: avoid; }
+  .ueb h4 { margin: 0 0 4px; font-size: 13pt; color: var(--lila); }
+  .nr { display: inline-block; background: var(--lila); color: #fff; border-radius: 50%; width: 22px; height: 22px; text-align: center; line-height: 22px; font-size: 11pt; margin-right: 6px; }
+  .kiste { background: var(--lila-hell); border-radius: 8px; padding: 4px 9px; margin: 4px 0; font-weight: 700; color: var(--lila); }
+  .luecke { display: inline-block; border-bottom: 1.5px solid #888; min-width: 110px; }
+  .rf td:last-child, .rf th:last-child { width: 95px; text-align: center; }
+  .loes { font-size: 11.5pt; }
+  .loes ol { padding-left: 24px; margin: 0; }
+  .loes li { margin: 0 0 4px; }
+  .loes .ueb { border-color: var(--linie); }
+  .loes h4 { color: var(--grau); }
+  .checkgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px; font-size: 11pt; line-height: 1.3; }
+  .checkgrid div { display: flex; gap: 6px; }
+  .checkgrid .box { font-size: 13pt; line-height: 1; color: var(--grau); }
+  .check td { padding: 3px 6px; }
+  .check td:first-child { width: 30px; text-align: center; font-size: 13pt; color: var(--grau); }
+  .seitenumbruch { break-before: page; }
+  .klein { font-size: 10.5pt; color: var(--grau); }
+</style>
+</head>
+<body>
+
+<div class="kopf">
+  <h1><span class="emo">📘</span> Lernzettel Werte und Normen · Klasse 5</h1>
+  <p class="unter">Kapitel „Ich bin ich“ und „Meine Familie“ · Buch Seite 10–25</p>
+</div>
+
+<div class="zwei">
+  <div class="start">
+    <h3><span class="emo">🧭</span> So lernst du mit diesem Zettel</h3>
+    <ol>
+      <li>Lies einen Abschnitt in Ruhe. Die graue Seitenzahl zeigt dir, wo es im Buch steht.</li>
+      <li>Lies den <b>Merksatz</b> laut. Sag ihn danach ohne hinzuschauen.</li>
+      <li>Mach die <b>Übungen</b> ab Teil 3. Bei <span class="emo">🆘</span> bekommst du einen Tipp.</li>
+      <li>Vergleiche mit den <b>Lösungen</b> am Ende und hake in der <b>Checkliste</b> ab, was du kannst.</li>
+    </ol>
+  </div>
+  <div class="start">
+    <h3><span class="emo">🔑</span> Aufgaben-Wörter verstehen</h3>
+    <table class="aufg">
+      <tr><td>beschreiben</td><td>Sag genau, was du siehst oder was passiert.</td></tr>
+      <tr><td>erklären, erläutern</td><td>Sag, <b>warum</b> etwas so ist. Benutze „weil“.</td></tr>
+      <tr><td>vergleichen</td><td>Was ist gleich? Was ist anders?</td></tr>
+      <tr><td>begründen</td><td>Sag deine Meinung und warum: „Ich finde …, weil …“</td></tr>
+      <tr><td>diskutieren</td><td>Sammle Gründe dafür und dagegen. Entscheide dich dann.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============ TEIL 1 ============ -->
+<h2 class="teil t1"><span class="emo">🙋</span> Teil 1 · Ich bin ich</h2>
+
+<div class="karte k1">
+  <h3><span class="emo">🪞</span> Wer bin ich? <span class="seite">S. 10–11</span></h3>
+  <ul>
+    <li><b>Gemeinsamkeiten und Unterschiede:</b> Du hast vieles mit anderen gemeinsam, zum Beispiel das Hobby, das Lieblingsessen oder den Geburtsmonat. Aber niemand ist genau so wie du.</li>
+    <li><b>Autoporträt:</b> Ayten und Nico haben einen Schuhkarton über sich gestaltet. Ein Fußball zeigt zum Beispiel ein Hobby, Muscheln zeigen einen Urlaub am Meer. So erzählen Gegenstände, wer man ist.</li>
+    <li><b>Mein Spiegelbild:</b> Sofie bekommt einen Zettel mit der Frage „Wer bist du?“. Sie schaut in den Spiegel, aber der zeigt nur ihr Aussehen. Wer sie wirklich ist, sieht man von außen nicht.</li>
+    <li><b>Wer bist du?</b> Der Philosoph Richard David Precht erklärt seinem Sohn Oskar: Ich weiß, wer ich bin, weil ich <b>eigene Gefühle und Gedanken</b> habe. Die hat kein anderer genau so.</li>
+  </ul>
+  <div class="merk"><span class="emo">💡</span> Ich bin einzigartig. Meine Gefühle, Gedanken, Wünsche und Erlebnisse machen mich zu mir.</div>
+  <div class="woerter"><span class="emo">📚</span> <b>Wörter-Hilfe:</b> <b>einzigartig</b> = dich gibt es nur einmal. · <b>Autoporträt</b> = Selbstbildnis, ein Bild von sich selbst. · <b>Philosoph</b> = jemand, der über große Fragen nachdenkt.</div>
+</div>
+
+<div class="karte k1">
+  <h3><span class="emo">🌠</span> Ich und meine Wünsche <span class="seite">S. 12–13</span></h3>
+  <ul>
+    <li><b>Jeder hat Wünsche und Träume:</b> Manche wünschen sich Dinge, die man kaufen kann, zum Beispiel ein Haus oder ein Auto. Andere wünschen sich etwas zu tun oder zu schaffen, zum Beispiel Fußball spielen, reiten oder ein Diplom bekommen.</li>
+    <li><b>Die Wunschmaschine</b> (Sams-Geschichte von Paul Maar): Herr Taschenbier wünscht sich auf „eine einsame Insel“. Er landet aber im Eis am Nordpol und friert. Er hat seinen Wunsch nicht genau genug gesagt.</li>
+    <li><b>Ohne Wunschmaschine:</b> Du kannst selbst etwas dafür tun, dass ein Wunsch wahr wird, zum Beispiel üben, sparen oder um Hilfe bitten.</li>
+    <li><b>Im goldenen Käfig:</b> Der Kakadu lebt in einem schönen Käfig. Er hat Futter, Pflege und Luxus, aber er ist nicht frei. Die Schwalben müssen ihr Futter selbst suchen. Dafür sind sie frei und erleben Abenteuer.</li>
+  </ul>
+  <div class="merk"><span class="emo">💡</span> Überlege genau, was du dir wünschst. Vieles kannst du selbst erreichen. Und manches Wichtige, wie Freiheit, kann man nicht kaufen.</div>
+  <div class="woerter"><span class="emo">📚</span> <b>Wörter-Hilfe:</b> <b>Luxus</b> = mehr als man braucht, etwas sehr Teures oder Bequemes. · <b>goldener Käfig</b> = man hat alles, ist aber nicht frei.</div>
+</div>
+
+<div class="karte k1">
+  <h3><span class="emo">⭐</span> Am liebsten wäre ich wie … <span class="seite">S. 14–15</span></h3>
+  <ul>
+    <li><b>Cosplay</b> kommt aus dem Englischen: „costume play“ heißt Kostümspiel. Fans verkleiden sich als ihre Lieblingsfigur aus einem <b>Manga</b> (japanischer Comic), einem <b>Anime</b> (japanischer Trickfilm) oder einem Videospiel.</li>
+    <li>Cosplayer treffen sich auf <b>Conventions</b>, das sind große Fan-Treffen. Dort gibt es Wettbewerbe. Eine Jury bewertet das Kostüm und wie ähnlich es dem Original ist.</li>
+    <li><b>Idol:</b> Das Wort kommt vom lateinischen <i>idolum</i> = Abgott. Heute ist ein Idol ein Star, den Fans sehr stark verehren, zum Beispiel eine Sängerin, ein Schauspieler oder eine Comicfigur. Fans machen Kleidung, Stil und Verhalten ihres Idols nach.</li>
+    <li><b>Stars sind nicht perfekt:</b> Auf dem roten Teppich wirken sie perfekt. Aber auch Stars haben Fehler und Probleme, manche zum Beispiel mit Alkohol oder Drogen.</li>
+  </ul>
+  <div class="merk"><span class="emo">💡</span> Ein Idol wird bewundert und nachgemacht. Aber auch Stars sind nur Menschen mit Fehlern.</div>
+</div>
+
+<div class="karte k1">
+  <h3><span class="emo">🌱</span> Sich an Vorbildern orientieren <span class="seite">S. 16–17</span></h3>
+  <p><b>Vorbild</b> = eine Person, an der man sich orientiert. Man möchte so handeln wie sie.</p>
+  <table>
+    <tr><th style="width:50%"><span class="emo">⭐</span> Idol</th><th><span class="emo">🌱</span> Vorbild</th></tr>
+    <tr><td>wird <b>verehrt</b>, weil es gerade in den Medien angesagt ist</td><td>wird <b>geachtet</b>, weil es gute Eigenschaften hat oder anderen hilft</td></tr>
+    <tr><td>Fans machen Kleidung und Stil nach</td><td>man richtet sein eigenes <b>Handeln</b> danach</td></tr>
+    <tr><td>meist ein Star</td><td>kann auch jemand aus Familie oder Freundeskreis sein</td></tr>
+  </table>
+  <p><b>Stars als Vorbilder:</b></p>
+  <ul>
+    <li><b>Bastian Schweinsteiger</b> (Fußballer): Film mit Tipps für sicheres Chatten im Internet</li>
+    <li><b>Sara Nuru</b> (Model): hilft mit „Menschen für Menschen“ armen Menschen in Äthiopien</li>
+    <li><b>Peter Maffay</b> (Sänger): Stiftung auf Mallorca für Kinder, die Schlimmes erlebt haben</li>
+    <li><b>Angelina Jolie</b> (Schauspielerin): Geld für eine Mädchenschule in Afghanistan und für Ärzte nach dem Erdbeben auf Haiti</li>
+  </ul>
+  <p><b>Junge Vorbilder:</b> <b>Helena</b> hilft im Projekt „Brückenbauer“ älteren und behinderten Menschen. Sie sagt: „Helfen macht mich glücklich.“ <b>Felix Finkbeiner</b> hat mit 9 Jahren „Plant for the Planet“ gegründet. Er will in jedem Land eine Million Bäume pflanzen, um das Klima zu schützen. Sein Motto: „Stop talking – start planting“, also „Hört auf zu reden, fangt an zu pflanzen“.</p>
+  <div class="merk"><span class="emo">💡</span> Von einem Vorbild lernt man, wie man gut handelt. Auch Kinder können Vorbilder sein. Und auch ein Vorbild darf Fehler machen, wenn es dazu steht.</div>
+</div>
+
+<!-- ============ TEIL 2 ============ -->
+<h2 class="teil t2"><span class="emo">👨‍👩‍👧‍👦</span> Teil 2 · Meine Familie</h2>
+
+<div class="karte k2">
+  <h3><span class="emo">📸</span> We are family <span class="seite">S. 18–19</span></h3>
+  <ul>
+    <li><b>Familienbilder:</b> Die Fotos zeigen eine ernste Familie aus dem Jahr 1902, einen Vater, der mit seinem Kind spielt, eine große Familie mit vielen Kindern und eine Familie, die zusammen im Bett kuschelt. Familien sehen also sehr verschieden aus und haben sich mit der Zeit verändert.</li>
+    <li><b>Glückliche Familie</b> (Ursula Wölfel): Eine Familie streitet am Samstag. Dann wollen alle eine perfekte „Buch-Familie“ spielen und immer freundlich sein. Das klappt nicht, weil jeder etwas anderes machen will. Am Ende merken sie: Sie sind eine ganz normale Familie.</li>
+    <li><b>Was Familie bedeutet:</b> Geborgenheit, Glück, Verpflichtung, Arbeit und Absicherung (Essen, Wohnung, Kleidung). Dazu gehören auch <b>Familienrituale</b> wie gemeinsame Mahlzeiten, Ausflüge oder Reisen.</li>
+  </ul>
+  <div class="merk"><span class="emo">💡</span> Keine Familie ist perfekt. Streit ist normal. Wichtig ist, dass man sich wieder verträgt.</div>
+  <div class="woerter"><span class="emo">📚</span> <b>Wörter-Hilfe:</b> <b>Geborgenheit</b> = sich sicher, beschützt und wohl fühlen. · <b>Ritual</b> = etwas, das man immer wieder gleich zusammen macht.</div>
+</div>
+
+<div class="karte k2">
+  <h3><span class="emo">❤️</span> Gut, dass es die Familie gibt <span class="seite">S. 20–21</span></h3>
+  <ul>
+    <li><b>Die Bilder</b> zeigen, was Familie leistet: Der Vater tröstet sein Kind, die Mutter pflegt ihr krankes Kind, alle machen zusammen einen Ausflug.</li>
+    <li><b>Der verlorene Sohn</b> (Geschichte aus der Bibel): Ein Sohn lässt sich sein Erbe auszahlen und verschwendet alles in der Fremde. Arm und hungrig kommt er zurück. Der Vater <b>verzeiht</b> ihm sofort und feiert ein Fest. Der ältere Bruder ist neidisch. Die Geschichte zeigt: Die Liebe der Eltern hört nicht auf.</li>
+    <li><b>Blut ist dicker als Wasser</b> (Moritz Baumstieger) – darum ist Familie wichtig:
+      <ul>
+        <li>Kleine Kinder brauchen ihre Familie, um zu überleben.</li>
+        <li>Familie gibt <b>Sicherheit und Geborgenheit</b>, zum Beispiel durch Gewohnheiten wie Plätzchenbacken.</li>
+        <li>Familie kann man sich nicht aussuchen. Sie ist wie ein Club fürs ganze Leben.</li>
+        <li>Von der Familie lernen wir am meisten, denn wir schauen uns viel von ihr ab.</li>
+        <li>Bei Problemen hilft die Familie.</li>
+        <li>Früher war Familie überlebenswichtig. Die Familien waren größer, und die Großeltern wohnten oft mit im Haus.</li>
+      </ul>
+    </li>
+  </ul>
+  <div class="merk"><span class="emo">💡</span> Familie gibt Sicherheit, Geborgenheit und Hilfe. „Blut ist dicker als Wasser“ heißt: Im Zweifel hält man zu seiner Familie.</div>
+</div>
+
+<div class="karte k2">
+  <h3><span class="emo">💬</span> Probleme mit der Familie <span class="seite">S. 22–23</span></h3>
+  <ul>
+    <li><b>Family Portrait</b> (Lied von Pink): Ein Kind leidet, weil sich die Eltern streiten und trennen wollen. Es verspricht: „Ich werde mich bessern.“ Das Kind glaubt also, es sei schuld. Es will keine zwei Adressen haben. Auf dem Familienfoto sehen alle glücklich aus, in Wirklichkeit aber nicht.</li>
+    <li><b>Wichtig:</b> Wenn Eltern streiten oder sich trennen, sind die Kinder <b>nicht</b> schuld.</li>
+    <li><b>Familienkonferenz:</b> Michael ist traurig. Seine Familie ist nach Wolfsburg gezogen, über 200 km weg von seinem alten Ort Lotte. Er vermisst seinen Freund Paul und seine große Schwester Franziska. Er findet keine neuen Freunde. Papa hat wegen der neuen Arbeit kaum Zeit und lobt nur die kleine Schwester Kira. Mama schimpft oft. Michael erzählt alles seiner Mutter. Dann macht die Familie eine <b>Familienkonferenz</b>: Alle setzen sich zusammen und reden.</li>
+  </ul>
+  <div class="tipp"><span class="emo">🗣️</span> <b>So klappt eine Familienkonferenz:</b> Jeder darf sagen, wie es ihm geht. Die anderen hören zu und lassen ausreden. Dann sucht man gemeinsam Lösungen und probiert sie aus.</div>
+  <div class="merk"><span class="emo">💡</span> Probleme in der Familie löst man am besten, indem man miteinander redet.</div>
+</div>
+
+<div class="karte k2">
+  <h3><span class="emo">🌈</span> Jede Familie ist anders! <span class="seite">S. 24–25</span></h3>
+  <table>
+    <tr><th style="width:30%">Familienform</th><th>Wer lebt zusammen?</th></tr>
+    <tr><td><b>traditionelle Familie</b></td><td>Mutter und Vater sind verheiratet und leben mit ihren Kindern.</td></tr>
+    <tr><td><b>Lebensgemeinschaft</b></td><td>Die Eltern sind nicht verheiratet, leben aber mit den Kindern zusammen.</td></tr>
+    <tr><td><b>Ein-Elternteil-Familie</b></td><td>Nur die Mutter oder nur der Vater lebt mit den Kindern. Man sagt auch: alleinerziehend.</td></tr>
+    <tr><td><b>Patchworkfamilie</b></td><td>Die Eltern haben sich getrennt. Ein Elternteil lebt mit einem neuen Partner und dessen Kindern zusammen. Oft kommen gemeinsame Kinder dazu.</td></tr>
+    <tr><td><b>Regenbogenfamilie</b></td><td>Zwei Mütter oder zwei Väter leben mit ihren Kindern.</td></tr>
+    <tr><td><b>Großfamilie</b></td><td>Viele Familienmitglieder leben zusammen, oft auch die Großeltern.</td></tr>
+  </table>
+  <p><b>Familie im Wandel</b> (Zahlen von 2011):</p>
+  <ul>
+    <li>Es gibt weniger Familien als früher: 1996 waren es 13,2 Millionen, 2011 nur noch 11,7 Millionen.</li>
+    <li>Mehr als die Hälfte der Familien hat nur ein Kind.</li>
+    <li>Knapp 3 von 4 Kindern leben bei verheirateten Eltern. Fast jedes 5. Kind lebt bei nur einem Elternteil, meistens bei der Mutter.</li>
+  </ul>
+  <p><b>Beispiele aus dem Buch:</b> Noëmi (14) lebt allein mit ihrer Mutter, „die kleinste Familie der Welt“. Für sie zählt, dass jemand wirklich für sie da ist. In der Patchworkfamilie von M4 wird Dirk zum „Dad“, und alle Kinder sind Geschwister. Rebecka hat zwei Mütter. Oft werden die drei nicht als Familie gesehen, deshalb erklärt sie es ihren Freunden offen.</p>
+  <div class="merk"><span class="emo">💡</span> Familie ist da, wo Menschen zusammenleben und füreinander sorgen – egal, wie die Familie aussieht.</div>
+  <div class="woerter"><span class="emo">📚</span> <b>Wörter-Hilfe:</b> <b>Patchwork</b> = eine Decke aus vielen bunten Stoffstücken. · <b>Wandel</b> = Veränderung. · <b>Armutsrisiko</b> = die Gefahr, arm zu werden. Alleinerziehende haben ein viel höheres Armutsrisiko.</div>
+</div>
+
+<!-- ============ TEIL 3 ============ -->
+<h2 class="teil t3"><span class="emo">✏️</span> Teil 3 · Jetzt bist du dran!</h2>
+<p class="klein">Schreib deine Antworten ins Heft. Schau erst danach in die Lösungen.</p>
+
+<div class="ueb">
+  <h4><span class="nr">1</span>Lückentext: Ich bin ich</h4>
+  <div class="kiste">Wörter-Kiste: einzigartig · Selbstbildnis · Gefühle · Gedanken · genau · frei · Luxus</div>
+  <p>Ein Autoporträt ist ein <span class="luecke"></span>. Jeder Mensch ist <span class="luecke"></span>. Precht sagt: Ich weiß, wer ich bin, weil ich eigene <span class="luecke"></span> und <span class="luecke"></span> habe. Die Wunschmaschine zeigt: Man muss sich <span class="luecke"></span> überlegen, was man sich wünscht. Der Kakadu hat viel <span class="luecke"></span>, aber er ist nicht <span class="luecke"></span>.</p>
+  <div class="tipp"><span class="emo">🆘</span> Lies noch einmal „Wer bin ich?“ und „Ich und meine Wünsche“ in Teil 1.</div>
+</div>
+
+<div class="ueb">
+  <h4><span class="nr">2</span>Richtig oder falsch?</h4>
+  <table class="rf">
+    <tr><th>Aussage</th><th>richtig / falsch</th></tr>
+    <tr><td>a) Herr Taschenbier landet auf einer warmen Insel im Süden.</td><td>☐ r &nbsp; ☐ f</td></tr>
+    <tr><td>b) Die Schwalben suchen ihr Futter selbst.</td><td>☐ r &nbsp; ☐ f</td></tr>
+    <tr><td>c) Cosplay heißt auf Deutsch „Kostümspiel“.</td><td>☐ r &nbsp; ☐ f</td></tr>
+    <tr><td>d) Stars machen nie Fehler.</td><td>☐ r &nbsp; ☐ f</td></tr>
+    <tr><td>e) Ein Vorbild kann auch jemand aus deiner Familie sein.</td><td>☐ r &nbsp; ☐ f</td></tr>
+    <tr><td>f) Felix Finkbeiner war 15, als er „Plant for the Planet“ gegründet hat.</td><td>☐ r &nbsp; ☐ f</td></tr>
+  </table>
+  <div class="tipp"><span class="emo">🆘</span> Wenn du unsicher bist, schau auf die Seitenzahl in Teil 1 und lies im Buch nach.</div>
+</div>
+
+<div class="zwei">
+<div class="ueb">
+  <h4><span class="nr">3</span>Idol oder Vorbild?</h4>
+  <p>Schreib zu jedem Satz „Idol“ oder „Vorbild“.</p>
+  <ul>
+    <li>a) Lena hat die gleiche Frisur wie ihre Lieblingssängerin.</li>
+    <li>b) Tim möchte so hilfsbereit sein wie sein Opa.</li>
+    <li>c) Mia hat 30 Poster von einem Schauspieler im Zimmer.</li>
+    <li>d) Ben findet Felix toll, weil er Bäume für das Klima pflanzt, und pflanzt selbst einen Baum.</li>
+  </ul>
+  <div class="tipp"><span class="emo">🆘</span> Frag dich: Geht es um Aussehen und Stil? Dann ist es ein Idol. Geht es um gutes Handeln? Dann ist es ein Vorbild.</div>
+</div>
+
+<div class="ueb">
+  <h4><span class="nr">4</span>Erkläre den Unterschied zwischen einem Idol und einem Vorbild.</h4>
+  <div class="tipp"><span class="emo">🆘</span> Schau in die Tabelle in Teil 1. Satzanfang: „Ein Idol wird verehrt, weil … Ein Vorbild wird geachtet, weil …“</div>
+</div>
+
+<div class="ueb">
+  <h4><span class="nr">5</span>Würdest du lieber wie der Kakadu oder wie die Schwalben leben? Begründe.</h4>
+  <div class="tipp"><span class="emo">🆘</span> Hier gibt es kein Richtig oder Falsch. Satzanfang: „Ich würde lieber wie … leben, weil … Ein Nachteil ist aber …“</div>
+</div>
+
+<div class="ueb">
+  <h4><span class="nr">6</span>„Wer ein Vorbild ist, darf sich keine Fehler erlauben!“ Was meinst du dazu?</h4>
+  <div class="tipp"><span class="emo">🆘</span> Denk daran: Jeder Mensch macht Fehler. Was sollte ein Vorbild tun, wenn ihm ein Fehler passiert?</div>
+</div>
+
+<div class="ueb">
+  <h4><span class="nr">7</span>Welche Familienform ist das?</h4>
+  <ul>
+    <li>a) Rebecka lebt mit ihrer Mutter und deren Partnerin Antje.</li>
+    <li>b) Noëmi lebt nur mit ihrer Mutter.</li>
+    <li>c) Mama, ihr neuer Partner Dirk, seine Tochter Katrin, zwei Kinder von Mama und die gemeinsamen Zwillinge.</li>
+    <li>d) Mutter und Vater sind verheiratet und leben mit ihren zwei Kindern.</li>
+    <li>e) Oma, Opa, die Eltern und fünf Kinder wohnen in einem Haus.</li>
+  </ul>
+  <div class="tipp"><span class="emo">🆘</span> Nimm die Tabelle „Jede Familie ist anders!“ zu Hilfe.</div>
+</div>
+
+<div class="ueb">
+  <h4><span class="nr">8</span>Nenne drei Gründe, warum Familie wichtig ist.</h4>
+  <div class="tipp"><span class="emo">🆘</span> Denk an den Text „Blut ist dicker als Wasser“: Was gibt die Familie? Was lernt man dort? Wer hilft bei Problemen?</div>
+</div>
+
+<div class="ueb">
+  <h4><span class="nr">9</span>Was bedeutet das Sprichwort „Blut ist dicker als Wasser“?</h4>
+  <div class="tipp"><span class="emo">🆘</span> „Blut“ steht für die Verwandten. Zu wem hält man also im Zweifel?</div>
+</div>
+
+<div class="ueb">
+  <h4><span class="nr">10</span>Was zeigt die Geschichte vom verlorenen Sohn über Familie?</h4>
+  <div class="tipp"><span class="emo">🆘</span> Wie reagiert der Vater, als der Sohn arm zurückkommt?</div>
+</div>
+
+<div class="ueb">
+  <h4><span class="nr">11</span>Im Lied „Family Portrait“ verspricht das Kind, sich zu bessern. Warum? Ist es wirklich schuld?</h4>
+  <div class="tipp"><span class="emo">🆘</span> Was glaubt das Kind, warum die Eltern streiten?</div>
+</div>
+
+<div class="ueb">
+  <h4><span class="nr">12</span>Nenne zwei Probleme von Michael und schlage für jedes eine Lösung vor.</h4>
+  <div class="tipp"><span class="emo">🆘</span> Denk an den Umzug, seine Freunde, an Papa und an Mama. Was könnte die Familie ändern?</div>
+</div>
+
+<div class="ueb">
+  <h4><span class="nr">13</span>Was bedeutet: „Keine Familie ist perfekt“?</h4>
+  <div class="tipp"><span class="emo">🆘</span> Denk an die Geschichte „Glückliche Familie“. Was passiert, als alle perfekt sein wollen?</div>
+</div>
+
+<div class="ueb">
+  <h4><span class="nr">14</span>Schreib deine eigene Erklärung: „Familie ist …“</h4>
+  <div class="tipp"><span class="emo">🆘</span> Benutze diese Wörter: Menschen · zusammen · füreinander da · egal wie.</div>
+</div>
+</div>
+
+<!-- ============ TEIL 4 ============ -->
+<h2 class="teil t4 seitenumbruch"><span class="emo">✅</span> Teil 4 · Lösungen</h2>
+<div class="loes">
+  <ol>
+    <li><b>Lückentext:</b> Selbstbildnis · einzigartig · Gefühle · Gedanken · genau · Luxus · frei</li>
+    <li><b>Richtig oder falsch?</b> a) falsch, er landet im Eis am Nordpol. · b) richtig · c) richtig · d) falsch, auch Stars machen Fehler. · e) richtig · f) falsch, er war 9 Jahre alt.</li>
+    <li><b>Idol oder Vorbild?</b> a) Idol · b) Vorbild · c) Idol · d) Vorbild</li>
+    <li><b>Idol und Vorbild:</b> Ein Idol wird verehrt, weil es gerade angesagt ist. Fans machen Kleidung und Stil nach. Ein Vorbild wird geachtet, weil es gute Eigenschaften hat oder anderen hilft. Man richtet sein eigenes Handeln danach.</li>
+    <li><b>Kakadu oder Schwalben:</b> Beispiel: Ich würde lieber wie die Schwalben leben, weil sie frei sind und Abenteuer erleben. Ein Nachteil ist, dass sie ihr Futter selbst suchen müssen. Auch der Kakadu ist eine gute Antwort, wenn du sie begründest, zum Beispiel mit Sicherheit und Bequemlichkeit.</li>
+    <li><b>Vorbilder und Fehler:</b> Beispiel: Ich stimme nicht zu. Jeder Mensch macht Fehler, auch ein Vorbild. Wichtig ist, dass es zu seinem Fehler steht und es danach besser macht.</li>
+    <li><b>Familienformen:</b> a) Regenbogenfamilie · b) Ein-Elternteil-Familie · c) Patchworkfamilie · d) traditionelle Familie · e) Großfamilie</li>
+    <li><b>Warum Familie wichtig ist:</b> Zum Beispiel: Sie gibt Sicherheit und Geborgenheit. Kleine Kinder brauchen sie zum Überleben. Man lernt in der Familie am meisten. Bei Problemen hilft die Familie.</li>
+    <li><b>Blut ist dicker als Wasser:</b> Im Zweifel hält man zu seinen Verwandten, also zu seiner Familie.</li>
+    <li><b>Der verlorene Sohn:</b> Der Vater verzeiht seinem Sohn sofort und freut sich, dass er wieder da ist. Die Geschichte zeigt: Die Familie verzeiht und nimmt einen wieder auf. Die Liebe der Eltern hört nicht auf.</li>
+    <li><b>Family Portrait:</b> Das Kind glaubt, es sei schuld am Streit der Eltern. Deshalb verspricht es, sich zu bessern. Es ist aber nicht schuld. Kinder sind nie schuld, wenn sich Eltern streiten oder trennen.</li>
+    <li><b>Michaels Probleme:</b> Zum Beispiel: Er hat keine Freunde in Wolfsburg. Lösung: Er geht in einen Sportverein und lädt Paul in den Ferien ein. · Papa hat keine Zeit für ihn. Lösung: Papa macht jede Woche eine feste Zeit nur mit Michael aus. · Mama schimpft oft. Lösung: Sie sprechen in Ruhe darüber, und Mama nimmt sich mehr Zeit für ihn.</li>
+    <li><b>Keine Familie ist perfekt:</b> In jeder Familie gibt es Streit, das ist normal. Als die Familie perfekt sein will, klappt es nicht, weil jeder etwas anderes möchte. Wichtig ist, dass man sich wieder verträgt.</li>
+    <li><b>Familie ist …</b> Beispiel: Familie sind Menschen, die zusammenleben und füreinander da sind, egal wie die Familie aussieht.</li>
+  </ol>
+</div>
+
+<div class="karte" style="border-color:#b9dfc8">
+  <h3 style="color:var(--gruen)"><span class="emo">☑️</span> Checkliste: Das kann ich!</h3>
+  <p class="klein">Hake ab, was du ohne Hilfe kannst. Was noch fehlt, liest du in Teil 1 noch einmal nach.</p>
+  <div class="checkgrid">
+    <div><span class="box">☐</span>Ich kann erklären, was ein Autoporträt ist und warum jeder Mensch einzigartig ist.</div>
+    <div><span class="box">☐</span>Ich kann die Geschichten von der Wunschmaschine und vom goldenen Käfig nacherzählen.</div>
+    <div><span class="box">☐</span>Ich kann erklären, was Cosplay ist.</div>
+    <div><span class="box">☐</span>Ich kann den Unterschied zwischen Idol und Vorbild erklären und Beispiele nennen.</div>
+    <div><span class="box">☐</span>Ich kann sagen, was Familie bedeutet und warum sie wichtig ist.</div>
+    <div><span class="box">☐</span>Ich kann die Geschichte vom verlorenen Sohn und das Sprichwort „Blut ist dicker als Wasser“ erklären.</div>
+    <div><span class="box">☐</span>Ich kann erklären, wie eine Familienkonferenz bei Problemen hilft.</div>
+    <div><span class="box">☐</span>Ich kann sechs Familienformen nennen und erklären.</div>
+  </div>
+</div>
+
+</body>
+</html>
